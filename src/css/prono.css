@@ -1,0 +1,57 @@
+/* Style sur les éléments Html */
+body{
+    background-color: rgb(230, 230, 230);
+}
+
+/* Styles uniques et génériques */
+.sambo-background{
+    background-color:rgb(31, 31, 95);
+}
+
+/*.center{
+    text-align: center;
+}*/
+
+.padding-left{
+    padding-left: 15px;
+}
+
+/* Styles ciblés*/
+.sambo-navbar-input{
+    border: 1px solid grey;
+    color: white;
+}
+
+.container-header{
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.container-title{
+    font-size: 20px;
+    padding-bottom: 10px; 
+}
+
+.container-combat-name{
+    font-weight: bold;
+    color: rgb(31, 31, 95);
+    vertical-align: middle;
+}
+
+.prono-container-row{
+    background-color:white;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    margin-top: 3px;
+}
+
+.blank-space{
+    padding-top: 20px
+}
+
+.prono-container{
+    text-align: center;
+    margin-block: 20px;
+}
