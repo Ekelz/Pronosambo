@@ -1,0 +1,38 @@
+h1.titre_combattant{
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+img.img_combattants_liste{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+}
+
+img.img_combattant{
+	display: block;
+    margin: 2%;
+    width: 25%;
+    float: left;    
+	border-radius: 10px;
+    height: auto;
+}
+
+.info_combattants_liste{
+	width: 20%;
+	height: 300px;
+	margin: 2%;
+	border-radius: 10px;
+	border: solid rgb(31, 31, 95);
+	float: left;
+	text-align: center;
+	vertical-align: text-bottom;
+}
+
+.info_joueur{
+    margin: 2%;
+    float: left;
+}

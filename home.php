@@ -12,6 +12,11 @@ function login()
 	require './views/login.php';
 }
 
+function combattants_liste()
+{
+	require './views/combattants_liste.php';
+}
+
 if(isset($_POST['btnLogin']))
 {
 	login();
