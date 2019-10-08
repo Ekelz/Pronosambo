@@ -58,6 +58,16 @@ ob_start();
             <button class="btn btn-outline-success btn-block">2</button></div>
         <div class="col container-combat-name">Ernest-Paulin</div>
     </div>
+    
+    <!-- PHP : Test de génération automatique de pronostics -->
+    <?php
+    $line1 = array('C1' => "Etienne",'V1' => "1.01",'N' => "25",'V2' => "100",'C2' => "Quentin");
+    $line2 = array('C1' => "Quentin",'V1' => "2.2",'N' => "3.6",'V2' => "2.15",'C2' => "Gabrielle");
+    $line3 = array('C1' => "Gabrielle",'V1' => "1.9",'N' => "5",'V2' => "2.8",'C2' => "Etienne");
+    $pronostics = array(1 => $line1, $line2, $line3);
+    ?>
+    <!-- A terminer -->
+    
 </div>
 
 <?php

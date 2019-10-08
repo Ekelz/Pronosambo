@@ -11,9 +11,9 @@
   	<link rel="stylesheet" href="../src/css/combattants_liste.css">	
 	<!-- <link rel="stylesheet" href="../src/css/bulma.min.css"> -->
 	<!-- <link rel="stylesheet" href="../src/css/login.css"> -->
-	<link rel="stylesheet" href="../src/bin/bootstrap-4.3.1-dist/css/bootstrap.css">
-	<link rel="stylesheet" href="../src/css/etienne.css">
-    <script defer src="../src/bin/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="./src/bin/bootstrap-4.3.1-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./src/css/etienne.css">
+    <script defer src="./src/bin/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
 	<script defer src="./src/js/all.js"></script>
 </head>
 
