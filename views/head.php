@@ -1,5 +1,5 @@
 <?php
-ob_start();²
+ob_start();
 ?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark sambo-background">
