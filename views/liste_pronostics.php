@@ -17,7 +17,6 @@ ob_start();
         <div class="col">Combattant 2</div>
     </div>
 </div>
-
 <div class="container prono-container">
     <div id="rowprono1" class="row prono-container-row rounded">
         <div class="col container-combat-name">Jean-Michel</div>
