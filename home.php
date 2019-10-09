@@ -22,12 +22,19 @@ function pronostics_liste()
 	require './views/liste_pronostics.php';
 }
 
+function resultats()
+{
+	require './views/resultats.php';
+}
+
 if(isset($_REQUEST['btnLogin'])){
 	loginUser();
 }elseif(isset($_POST['btnFighter'])){
 	combattants_liste();
 }elseif(isset($_POST['btnPronos'])){
 	pronostics_liste();
+}elseif(isset($_POST['btnResults'])){
+	resultats();
 }else{
 	main();
 }
