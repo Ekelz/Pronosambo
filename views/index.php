@@ -3,7 +3,7 @@ $title="Pronosambo";
 ob_start();
 ?>
 <section class="section">
-    <div class="container">
+    <div class="container item-body">
         <div class="row">
             <div class="card combattant-home-card">
                 <div class="card-header sambo-background">
@@ -24,6 +24,16 @@ ob_start();
             <div class="card combattant-home-card">
                 <div class="card-header sambo-background">
                     ET MOI JE SUIS UNE AUTRE CARTE
+                </div>
+                <div class="card-body">
+                    <form>
+                        <button class="btn btn-light my-2 my-sm-0 sambo-background" type="submit">Accéder à quelque chose</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card combattant-home-card">
+                <div class="card-header sambo-background">
+                    ET MOI UNE 3EME CARTE ! CONSIDEREZ MOI !!
                 </div>
                 <div class="card-body">
                     <form>

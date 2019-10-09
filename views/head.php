@@ -3,7 +3,7 @@ ob_start();
 ?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark sambo-background">
-        <img class=navbar-brand style="width:50px;" src="./src/img/logopronosambo.png">
+        <img class="navbar-brand head-logo-resize" src="./src/img/logopronosambo.png">
         <form method="post" action="./home.php">
             <input class="sambo-background no-borders navbar-brand" type="submit" name="" value="PRONOSAMBO">
         </form>
@@ -15,23 +15,28 @@ ob_start();
                 <li class="nav-item">
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="" value="Accueil">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="" value="Accueil">
                     </form>
                 </li>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="" value="Futures rencontres">
+                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnPronos" value="Futures rencontres">
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnPronos" value="Résultats">
+                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnResults" value="Résultats">
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnFightersList" value="Combattants">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnFightersList" value="Combattants">
                     </form>
                 </li>
-                <li class="nav-item padding-left-header">
+                <li class="nav-item">
+                    <form method="post" action="./home.php">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnCompet" value="Compétitions">
+                    </form>
+                <li class="nav-item">
+                <li class="nav-item padding-left">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 sambo-navbar-input sambo-background" type="search" placeholder="Rechercher un combattant..." aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Recherche</button>
@@ -45,7 +50,7 @@ ob_start();
                     </li>
                     <li class="nav-item">
                         <form method="post" action="./home.php">
-                            <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnLogin" value="Connexion">
+                            <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnLogin" value="Connexion">
                         </form>
                     </li>
                 </ul>
