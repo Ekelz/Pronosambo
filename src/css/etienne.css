@@ -6,6 +6,7 @@ body{
 /* Styles uniques et génériques */
 .sambo-background{
     background-color:rgb(31, 31, 95);
+    color: white;
 }
 
 /*.center{
@@ -87,3 +88,12 @@ body{
     color: #495057;
     border-color: #dee2e6 #dee2e6 #fff;
   }
+
+  
+/* ****************************
+************  HOME  ***********
+*******************************/
+.combattant-home-card{
+    width: 45%;
+    margin: 2.5%;
+}
