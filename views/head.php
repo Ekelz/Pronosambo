@@ -20,11 +20,11 @@ ob_start();
                 </li>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnPronos" value="Futures rencontres">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnPronos" value="Futures rencontres">
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnResults" value="Résultats">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnResults" value="Résultats">
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
