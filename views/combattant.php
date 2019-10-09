@@ -1,10 +1,9 @@
 <?php
 ob_start();
 ?>
-    <h1 class="titre_combattant">Fedor</h1>
         
-    <img class="img_combattant" src="../src/img/fedor.jpg"></div>
-    <div class="block_joueur">
+    <img class="img_combattant" src="./src/img/fedor.jpg"></div>
+    <div class="block_joueur rounded">
         <div class="champ_joueur">Nom :</div>
         <div class="champ_joueur">Prénom :</div>
         <div class="champ_joueur">Âge :</div>
@@ -13,7 +12,12 @@ ob_start();
         <div class="champ_joueur">Classement :</div>
     </div>
 
-    <div class="champ_joueur">Palmarès</div>
+    
+    <div class="row container-header container-title sambo-background rounded-top">
+        <div class="col">
+            PALMARES
+        </div>
+    </div>
     <div class="row container-header sambo-background rounded-bottom">
         <div class="col">Année</div>
         <div class="col">Compétition</div>
