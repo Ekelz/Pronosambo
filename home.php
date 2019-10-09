@@ -31,7 +31,7 @@ if(isset($_REQUEST['btnLogin'])){
 	loginUser();
 }elseif(isset($_POST['btnFightersList'])){
 	combattants_liste();
-}elseif(isset($_POST['btnFighter']) || isset($_REQUEST['btnFighter'])){
+}elseif(isset($_POST['btnFighter'])){
 	combattant();
 }elseif(isset($_POST['btnPronos'])){
 	pronostics_liste();
