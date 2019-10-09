@@ -3,13 +3,13 @@ $title = "Pronosambo";
 ob_start();
 ?>
 
-<div class="container prono-container item-body">
-    <div class="row container-header container-title sambo-background rounded-top">
+<div class="container prono-container sambo-container item-body">
+    <div class="row container-title">
         <div class="col">
-            LISTE DES COMBATS A VENIR
+            COMBATS À VENIR
         </div>
     </div>
-    <div class="row container-header sambo-background rounded-bottom">
+    <div class="row container-header sambo-background rounded">
         <div class="col">Combattant 1</div>
         <div class="col">Victoire 1</div>
         <div class="col">Nul</div>

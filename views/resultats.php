@@ -3,10 +3,10 @@ $title = "Pronosambo";
 ob_start();
 ?>
 
-<div class="container prono-container item-body">
-    <div class="row container-header container-title sambo-background rounded-top">
+<div class="container prono-container sambo-container item-body">
+    <div class="row container-title">
         <div class="col">
-            DERNIERS RESULTATS
+            DERNIERS RÉSULTATS
         </div>
     </div>
     <div class="row container-header sambo-background rounded-bottom">
@@ -17,7 +17,7 @@ ob_start();
         <div class="col-3"></div>
     </div>
 </div>
-<div class="container prono-container item-body">
+<div class="container prono-container sambo-container item-body">
     <!-- <div id="rowresult1" class="row prono-container-row rounded">
         <div class="col-1">25/09/2019</div>
         <div class="col container-combat-name">Jean-Michel</div>

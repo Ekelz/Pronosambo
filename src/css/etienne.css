@@ -26,7 +26,8 @@ body {
 }
 
 .container-title {
-    font-size: 20px;
+    font-size: 36px;
+    color: white;
     font-weight: bold;
     padding-bottom: 10px;
 }
@@ -49,6 +50,9 @@ body {
 
 .prono-container {
     text-align: center;
+}
+
+.sambo-container {
     margin-block: 20px;
 }
 
