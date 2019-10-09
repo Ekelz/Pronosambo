@@ -31,7 +31,7 @@ ob_start();
                         <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnFighter" value="Combattants">
                     </form>
                 </li>
-                <li class="nav-item padding-left">
+                <li class="nav-item padding-left-header">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 sambo-navbar-input sambo-background" type="search" placeholder="Rechercher un combattant..." aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Recherche</button>
