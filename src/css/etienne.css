@@ -67,6 +67,7 @@ body {
     border: 1px solid transparent;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    height: calc(1.5em + 0.75rem + 2px);
 }
 
 .no-borders:hover .no-borders:focus {

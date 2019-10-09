@@ -15,7 +15,7 @@ ob_start();
                 <li class="nav-item">
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="" value="Accueil">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="" value="Accueil">
                     </form>
                 </li>
                 <li class="nav-item">
@@ -28,9 +28,14 @@ ob_start();
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnFighter" value="Combattants">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnFighter" value="Combattants">
                     </form>
                 </li>
+                <li class="nav-item">
+                    <form method="post" action="./home.php">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnCompet" value="Compétitions">
+                    </form>
+                <li class="nav-item">
                 <li class="nav-item padding-left">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 sambo-navbar-input sambo-background" type="search" placeholder="Rechercher un combattant..." aria-label="Search">
@@ -45,7 +50,7 @@ ob_start();
                     </li>
                     <li class="nav-item">
                         <form method="post" action="./home.php">
-                            <input class="form-control mr-sm-2 sambo-background no-borders" type="submit" name="btnLogin" value="Connexion">
+                            <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnLogin" value="Connexion">
                         </form>
                     </li>
                 </ul>
