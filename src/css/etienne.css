@@ -1,100 +1,121 @@
-/* Style sur les éléments Html */
-body{
-   background-color: rgb(180, 0, 0);
+body {
+    background-color: rgb(180, 0, 0);
+    background-image: url("../img/Sambpo_fond_ecran.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-/* Styles uniques et génériques */
-.sambo-background{
-    background-color:rgb(31, 31, 95);
+.sambo-background {
+    background-color: rgb(31, 31, 95);
     color: white;
 }
 
-/*.center{
-    text-align: center;
-}*/
-
-.padding-left{
+.padding-left {
     padding-left: 15px;
 }
 
-/* Styles ciblés*/
-.sambo-navbar-input{
+.sambo-navbar-input {
     border: 1px solid grey;
     color: white;
 }
 
-.container-header{
+.container-header {
     color: white;
-    font-weight: bold;
     padding-top: 10px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
 }
 
-.container-title{
+.container-title {
     font-size: 20px;
-    padding-bottom: 10px; 
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
-.container-combat-name{
-    font-weight: bold;
+.container-combat-name {
     color: rgb(31, 31, 95);
     vertical-align: middle;
 }
 
-.prono-container-row{
-    background-color:white;
-    padding-top : 10px;
+.prono-container-row {
+    background-color: white;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 3px;
 }
 
-.blank-space{
+.blank-space {
     padding-top: 20px
 }
 
-.prono-container{
+.prono-container {
     text-align: center;
     margin-block: 20px;
 }
 
-  
-  .no-borders:hover, .no-borders:focus {
+.no-borders:hover,
+.no-borders:focus {
     text-decoration: none;
-  }
-  
-  .no-borders.disabled {
+}
+
+.no-borders.disabled {
     color: #919ca7;
     pointer-events: none;
     cursor: default;
-  }
-  
-  .no-borders {
+}
+
+.no-borders {
     border: 1px solid transparent;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     height: calc(1.5em + 0.75rem + 2px);
-  }
-  
-  .no-borders:hover .no-borders:focus {
+}
+
+.no-borders:hover .no-borders:focus {
     color: #dee2e6;
-  }
-  
-    .no-borders.disabled {
+}
+
+.no-borders.disabled {
     color: #6c757d;
     background-color: transparent;
     border-color: transparent;
-  }
-  
-  .no-borders.active {
+}
+
+.no-borders.active {
     color: #495057;
     border-color: #dee2e6 #dee2e6 #fff;
-  }
+}
 
-  
-/* ****************************
-************  HOME  ***********
-*******************************/
-.combattant-home-card{
-    width: 45%;
-    margin: 2.5%;
+.combattant-home-card {
+    width: 30%;
+    margin: 1%;
+    margin-top: 20px;
+}
+
+.victoire-totale {
+    color: rgb(0, 167, 0);
+}
+
+.container-combat-name.victoire-totale {
+    font-weight: bold;
+}
+
+.victoire-score {
+    color: rgb(31, 31, 95);
+}
+
+.score-nul {
+    color: grey;
+}
+
+.head-logo-resize {
+    width: 50px;
+}
+
+.gold-logo-resize {
+    width: 30px;
+    padding-right: 7px;
+}
+
+.item-body {
+    opacity: 0.93;
 }
