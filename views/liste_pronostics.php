@@ -58,16 +58,25 @@ ob_start();
             <button class="btn btn-outline-success btn-block">2</button></div>
         <div class="col container-combat-name">Ernest-Paulin</div>
     </div>
-    
+
     <!-- PHP : Test de génération automatique de pronostics -->
     <?php
-    $line1 = array('C1' => "Etienne",'V1' => "1.01",'N' => "25",'V2' => "100",'C2' => "Quentin");
-    $line2 = array('C1' => "Quentin",'V1' => "2.2",'N' => "3.6",'V2' => "2.15",'C2' => "Gabrielle");
-    $line3 = array('C1' => "Gabrielle",'V1' => "1.9",'N' => "5",'V2' => "2.8",'C2' => "Etienne");
+    $line1 = array('C1' => "Etienne", 'V1' => "1.01", 'N' => "25", 'V2' => "100", 'C2' => "Quentin");
+    $line2 = array('C1' => "Quentin", 'V1' => "2.2", 'N' => "3.6", 'V2' => "2.15", 'C2' => "Gabrielle");
+    $line3 = array('C1' => "Gabrielle", 'V1' => "1.9", 'N' => "5", 'V2' => "2.8", 'C2' => "Etienne");
     $pronostics = array(1 => $line1, $line2, $line3);
+    $i = 4;
+    foreach ($pronostics as $prono) {
+        $i++;
+        echo '<div id="rowprono', $i, '" class="row prono-container-row rounded"><div class="col container-combat-name">', $prono['C1'];
+        echo '</div> <div class="col"><button class="btn btn-outline-danger btn-block">', $prono['V1'];
+        echo '</button></div> <div class="col"><button class="btn btn-outline-secondary btn-block">', $prono['N'];
+        echo '</button></div><div class="col"><button class="btn btn-outline-success btn-block">', $prono['V2'];
+        echo '</button></div><div class="col container-combat-name">', $prono['C2'], '</div></div>';
+    }
     ?>
     <!-- A terminer -->
-    
+
 </div>
 
 <?php
