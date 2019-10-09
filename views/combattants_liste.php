@@ -2,7 +2,7 @@
 $title="Pronosambo - Liste de combattants";
 ob_start();
 ?>
-
+	<div class="container item-body sambo-container">
 		<h1 class="titre_combattant">Combattants</h1>
 		
 		<form method="post" action="./home.php">
@@ -24,7 +24,7 @@ ob_start();
 				</div>	
 			</div>
 		</form>	
-		
+	</div>	
 
 <?php
     $content=ob_get_clean();
