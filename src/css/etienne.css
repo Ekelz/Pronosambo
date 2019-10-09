@@ -55,3 +55,35 @@ body{
     text-align: center;
     margin-block: 20px;
 }
+
+  
+  .no-borders:hover, .no-borders:focus {
+    text-decoration: none;
+  }
+  
+  .no-borders.disabled {
+    color: #919ca7;
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  .no-borders {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  
+  .no-borders:hover .no-borders:focus {
+    color: #dee2e6;
+  }
+  
+    .no-borders.disabled {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .no-borders.active {
+    color: #495057;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
