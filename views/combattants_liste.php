@@ -5,21 +5,26 @@ ob_start();
 
 		<h1 class="titre_combattant">Combattants</h1>
 		
-		<div class="info_combattants_liste">
-			<a href="./views/combattant.php">
-				<img class="img_combattants_liste" src="./src/img/fedor.jpg" width="200px">
-				<div>Fedor</div>
-			</a>
-		</div>
 		<form method="post" action="./home.php">
-			<div class="info_combattants_liste">
-				<input type="image" src="./src/img/Stanislav.jpg" name="submit" width="200px"/>
-				<div>Stanislav</div>
+			<div class="card border-0 info_combattants_liste sambo-background" style="width: 18rem;">
+				<input type="hidden" name="btnFighter">
+				<input class="img_combattants_liste" type="image" src="./src/img/fedor.jpg" alt="submit" name="btnFighter"/>
+				<div class="card-body img_combattants_liste">
+					<input class="btn_nom_joueur sambo-background" type="submit" name="btnFighter" value="Fedor"/>
+				</div>
 			</div>
-		</form>
+		</form>	
 
-
-	
+		<form method="post" action="./home.php">
+			<div class="card border-0 info_combattants_liste sambo-background" style="width: 18rem;">
+				<input type="hidden" name="btnFighter">
+				<input class="img_combattants_liste" type="image" src="./src/img/Stanislav.jpg" name="btnFighter"/>
+				<div class="card-body img_combattants_liste">
+					<input class="btn_nom_joueur sambo-background" type="submit" name="btnFighter" value="Stanislav"/>	
+				</div>	
+			</div>
+		</form>	
+		
 
 <?php
     $content=ob_get_clean();

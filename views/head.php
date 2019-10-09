@@ -28,7 +28,7 @@ ob_start();
                     </form>
                 <li class="nav-item">
                     <form method="post" action="./home.php">
-                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnFighter" value="Combattants">
+                        <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnFightersList" value="Combattants">
                     </form>
                 </li>
                 <li class="nav-item">

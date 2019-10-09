@@ -1,38 +1,50 @@
 h1.titre_combattant{
+	margin: 2%;
 	text-align: center;
 	font-size: 32px;
 	font-weight: bold;
+    color: white;
 }
 
-img.img_combattants_liste{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.img_combattants_liste{
+	border-radius: 5px;
 	width: 100%;
 	height: auto;
 }
 
-img.img_combattant{
+.img_combattant{
 	display: block;
-    margin: 2%;
+    margin-top: 5%;
+    margin-right: 2%;
+    margin-left: 2%;
     width: 25%;
-    float: left;    
+    float: left;
 	border-radius: 10px;
     height: auto;
 }
 
 .info_combattants_liste{
-	width: 20%;
-	height: 300px;
 	margin: 2%;
 	border-radius: 10px;
-	border: solid rgb(31, 31, 95);
-	float: left;
+	display: inline-block;
 	text-align: center;
-	vertical-align: text-bottom;
 }
 
-.info_joueur{
-    margin: 2%;
-    float: left;
+.btn_nom_joueur{
+	border: transparent;
+}
+
+.block_joueur{
+    margin-top: 5%;
+    margin-right: 2%;
+    margin-left: 2%;
+	display: inline-block;
+	width: 50%;
+	background-color: white;
+}
+
+.champ_joueur{
+	margin: 2%;
+	color: black;
+	font-weight: bold;
 }
