@@ -7,14 +7,27 @@ function main()
 	require './views/index.php';
 }
 
-function login()
+function loginUser()
 {
 	require './views/login.php';
 }
 
-if(isset($_POST['btnLogin']))
+function combattants_liste()
 {
-	login();
+	require './views/combattants_liste.php';
+}
+
+function pronostics_liste()
+{
+	require './views/liste_pronostics.php';
+}
+
+if(isset($_REQUEST['btnLogin'])){
+	loginUser();
+}elseif(isset($_POST['btnFighter'])){
+	combattants_liste();
+}elseif(isset($_POST['btnPronos'])){
+	pronostics_liste();
 }else{
 	main();
 }

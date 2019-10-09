@@ -1,5 +1,5 @@
 <?php
-$title = "Pronosambo";
+$title="Pronosambo";
 ob_start();
 ?>
 <section class="section">
@@ -32,12 +32,10 @@ ob_start();
                 </div>
             </div>
         </div>
+    </section>
     </div>
-</section>
-
-</html>
 
 <?php
-$content = ob_get_clean();
-require("layout.php");
+    $content=ob_get_clean();
+    require("layout.php");
 ?>

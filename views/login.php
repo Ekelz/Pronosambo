@@ -1,11 +1,10 @@
 <?php
 $title="Pronosambo";
-
 ob_start();
 ?>
         <section class="section">
             <div class="container">
-                <form method="post" action="connect.php">
+                <form method="post" action="./views/auth/connect.php">
                     <div class="container">
                         <h1>Register</h1>
                         <p>Please write your credentials to connect to your account.</p>
