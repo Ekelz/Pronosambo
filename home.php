@@ -12,6 +12,11 @@ function loginUser()
 	require './views/login.php';
 }
 
+function competitions_liste()
+{
+	require './views/competitions_liste.php';
+}
+
 function combattants_liste()
 {
 	require './views/combattants_liste.php';
@@ -28,6 +33,8 @@ if(isset($_REQUEST['btnLogin'])){
 	combattants_liste();
 }elseif(isset($_POST['btnPronos'])){
 	pronostics_liste();
+}elseif(isset($_POST['btnCompet'])){
+	competitions_liste();
 }else{
 	main();
 }
