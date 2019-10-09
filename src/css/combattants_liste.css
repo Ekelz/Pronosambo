@@ -2,6 +2,7 @@ h1.titre_combattant{
 	text-align: center;
 	font-size: 32px;
 	font-weight: bold;
+    color: white;
 }
 
 img.img_combattants_liste{
@@ -16,14 +17,12 @@ img.img_combattant{
 	display: block;
     margin: 2%;
     width: 25%;
-    float: left;    
+    float: left;
 	border-radius: 10px;
     height: auto;
 }
 
 .info_combattants_liste{
-	width: 20%;
-	height: 300px;
 	margin: 2%;
 	border-radius: 10px;
 	border: solid rgb(31, 31, 95);
@@ -32,7 +31,12 @@ img.img_combattant{
 	vertical-align: text-bottom;
 }
 
-.info_joueur{
+.block_joueur{
     margin: 2%;
     float: left;
+}
+
+.champ_joueur{
+	margin: 2%;
+    color: white;
 }
