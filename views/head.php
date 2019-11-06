@@ -2,6 +2,7 @@
 ob_start();
 ?>
 <header>
+    <!-- Navbar-expand-lg signifie que l'on est sur la navbar lorsque la page web est grande-->
     <nav class="navbar navbar-expand-lg navbar-dark sambo-background">
         <img class="navbar-brand head-logo-resize" src="./src/img/logopronosambo.png">
         <form method="post" action="./home.php">

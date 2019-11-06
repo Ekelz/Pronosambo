@@ -35,7 +35,7 @@ ob_start();
     <?php
     $line1 = array('Date' => "20/09/2019", 'C1' => "Jean-Michel", 'S1' => "45", 'S2' => "18", 'C2' => "Patrick-Hervé");
     $line2 = array('Date' => "19/09/2019", 'C1' => "Paul-Henri", 'S1' => "", 'S2' => "Victoire Totale", 'C2' => "Quentin");
-    $line3 = array('Date' => "14/09/2019", 'C1' => "Lalala", 'S1' => "12", 'S2' => "9", 'C2' => "Patrick-Hervé");
+    $line3 = array('Date' => "14/09/2019", 'C1' => "Gabrielle", 'S1' => "12", 'S2' => "9", 'C2' => "Patrick-Hervé");
     $results = array($line1, $line2, $line3);
     $i = 0;
     foreach ($results as $result) {
@@ -61,7 +61,7 @@ ob_start();
             echo '</div><div class="col score-nul">', $result['S1'], '-', $result['S2'];
             echo '</div><div class="col container-combat-name score-nul">', $result['C2'];
         }
-        echo '</div><div class="col-3"><button class="btn btn-outline-danger btn-block"><img src="./src/img/sacdor.png" class="gold-logo-resize">Empocher mes gains</button></div></div>';
+        echo '</div><div class="col-3"><button class="btn btn-sm btn-outline-danger btn-block"><img src="./src/img/sacdor.png" class="gold-logo-resize">Empocher mes gains</button></div></div>';
         $i++;
     }
     ?>
