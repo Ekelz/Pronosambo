@@ -58,13 +58,13 @@ ob_start();
     foreach ($pronostics as $prono) {
         echo '<div id="rowprono', $i, '" class="row prono-container-row rounded"><div class="col container-combat-name">', $prono['C1'];
         if ($prono['V1'] >= $prono['V2']) {
-            echo '</div> <div class="col"><button class="btn btn-outline-danger btn-block">', $prono['V1'];
-            echo '</button></div> <div class="col"><button class="btn btn-outline-secondary btn-block">', $prono['N'];
-            echo '</button></div><div class="col"><button class="btn btn-outline-success btn-block">', $prono['V2'];
+            echo '</div> <div class="col"><button class="btn btn-sm btn-outline-danger btn-block">', $prono['V1'];
+            echo '</button></div> <div class="col"><button class="btn btn-sm btn-outline-secondary btn-block">', $prono['N'];
+            echo '</button></div><div class="col"><button class="btn btn-sm btn-outline-success btn-block">', $prono['V2'];
         } else {
-            echo '</div> <div class="col"><button class="btn btn-outline-success btn-block">', $prono['V1'];
-            echo '</button></div> <div class="col"><button class="btn btn-outline-secondary btn-block">', $prono['N'];
-            echo '</button></div><div class="col"><button class="btn btn-outline-danger btn-block">', $prono['V2'];
+            echo '</div> <div class="col"><button class="btn btn-sm btn-outline-success btn-block">', $prono['V1'];
+            echo '</button></div> <div class="col"><button class="btn btn-sm btn-outline-secondary btn-block">', $prono['N'];
+            echo '</button></div><div class="col"><button class="btn btn-sm btn-outline-danger btn-block">', $prono['V2'];
         }
         echo '</button></div><div class="col container-combat-name">', $prono['C2'], '</div></div>';
         $i++;
