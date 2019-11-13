@@ -18,7 +18,7 @@ ob_start();
     </div>
 </div>
 <div class="container prono-container sambo-container item-body">
-    <!-- <div id="rowresult1" class="row prono-container-row rounded">
+    <!-- <div id="rowrow1" class="row prono-container-row rounded">
         <div class="col-1">25/09/2019</div>
         <div class="col container-combat-name">Jean-Michel</div>
         <div class="col victoire-totale">Victoire Totale</div>
@@ -31,38 +31,47 @@ ob_start();
         </div>
     </div> -->
 
-    <!-- PHP : Génération automatique de résultats -->
     <?php
-    $line1 = array('Date' => "20/09/2019", 'C1' => "Jean-Michel", 'S1' => "45", 'S2' => "18", 'C2' => "Patrick-Hervé");
-    $line2 = array('Date' => "19/09/2019", 'C1' => "Paul-Henri", 'S1' => "", 'S2' => "Victoire Totale", 'C2' => "Quentin");
-    $line3 = array('Date' => "14/09/2019", 'C1' => "Lalala", 'S1' => "12", 'S2' => "9", 'C2' => "Patrick-Hervé");
-    $results = array($line1, $line2, $line3);
+    // Requetage
+    $host = 'localhost';
+    $dbname = 'pronosambo';
+    $username = 'root';
+    $password = '';
+    require "./model/requetes/get_finished_games.php";
     $i = 0;
-    foreach ($results as $result) {
-        echo '<div id="rowresult', $i, '" class="row prono-container-row rounded"><div class="col-1">', $result['Date'];
-        if ($result['S1'] == 'Victoire Totale') {
-            echo '</div><div class="col container-combat-name victoire-totale">', $result['C1'];
-            echo '</div><div class="col victoire-totale">', $result['S1'];
-            echo '</div><div class="col container-combat-name">', $result['C2'];
-        } elseif ($result['S2'] == "Victoire Totale") {
-            echo '</div><div class="col container-combat-name">', $result['C1'];
-            echo '</div><div class="col victoire-totale">', $result['S2'];
-            echo '</div><div class="col container-combat-name victoire-totale">', $result['C2'];
-        } elseif ($result['S2'] - $result['S1'] >= 12) {
-            echo '</div><div class="col container-combat-name">', $result['C1'];
-            echo '</div><div class="col victoire-score">', $result['S1'], '-', $result['S2'];
-            echo '</div><div class="col container-combat-name victoire-totale">', $result['C2'];
-        } elseif ($result['S1'] - $result['S2'] >= 12) {
-            echo '</div><div class="col container-combat-name victoire-totale">', $result['C1'];
-            echo '</div><div class="col victoire-score">', $result['S1'], '-', $result['S2'];
-            echo '</div><div class="col container-combat-name">', $result['C2'];
+
+    // Affichage du tableau des résultats
+    // Score = -1 : victoire totale.
+    while ($row = $q->fetch()) :
+        echo '<div id="rowrow', $row['id_match'], '" class="row prono-container-row rounded"><div class="col-1">', $row['date_match'];
+        if ($row['score_c1'] == '-1') {
+            echo '</div><div class="col container-combat-name victoire-totale">', $row['c1surname'], ' ', $row['c1name'];
+            echo '</div><div class="col victoire-totale">Victoire Totale';
+            echo '</div><div class="col container-combat-name">', $row['c2surname'], ' ', $row['c2name'];
+        } elseif ($row['score_c2'] == "-1") {
+            echo '</div><div class="col container-combat-name">', $row['c1surname'], ' ', $row['c1name'];
+            echo '</div><div class="col victoire-totale">Victoire Totale';
+            echo '</div><div class="col container-combat-name victoire-totale">', $row['c2surname'], ' ', $row['c2name'];
+        } elseif ($row['score_c2'] - $row['score_c1'] >= 12) {
+            echo '</div><div class="col container-combat-name">', $row['c1surname'], ' ', $row['c1name'];
+            echo '</div><div class="col victoire-score">', $row['score_c1'], '-', $row['score_c2'];
+            echo '</div><div class="col container-combat-name victoire-totale">', $row['c2surname'], ' ', $row['c2name'];
+        } elseif ($row['score_c1'] - $row['score_c2'] >= 12) {
+            echo '</div><div class="col container-combat-name victoire-totale">', $row['c1surname'], ' ', $row['c1name'];
+            echo '</div><div class="col victoire-score">', $row['score_c1'], '-', $row['score_c2'];
+            echo '</div><div class="col container-combat-name">', $row['c2surname'], ' ', $row['c2name'];
         } else {
-            echo '</div><div class="col container-combat-name score-nul">', $result['C1'];
-            echo '</div><div class="col score-nul">', $result['S1'], '-', $result['S2'];
-            echo '</div><div class="col container-combat-name score-nul">', $result['C2'];
+            echo '</div><div class="col container-combat-name score-nul">', $row['c1surname'], ' ', $row['c1name'];
+            echo '</div><div class="col score-nul">', $row['score_c1'], '-', $row['score_c2'], ' (nul)';
+            echo '</div><div class="col container-combat-name score-nul">', $row['c2surname'], ' ', $row['c2name'];
         }
-        echo '</div><div class="col-3"><button class="btn btn-outline-danger btn-block"><img src="./src/img/sacdor.png" class="gold-logo-resize">Empocher mes gains</button></div></div>';
+        echo '</div><div class="col-3"><button class="btn btn-sm btn-outline-danger btn-block"><img src="./src/img/sacdor.png" class="gold-logo-resize">Empocher mes gains</button></div></div>';
         $i++;
+    endwhile;
+    if ($i == 0) {
+        echo "<div class='row prono-container-row rounded'><div class=col-12>
+        Il n'y a pas de combats terminés actuellement.
+        </div></div>";
     }
     ?>
 
