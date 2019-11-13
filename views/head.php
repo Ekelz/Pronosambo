@@ -43,8 +43,28 @@ ob_start();
                     </form>
                 </li>
             </ul>
-            <form>
-                <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
+                <?php
+                if (isset($_SESSION['username'])) {
+                    if ($_SESSION['username'] !== "") {
+                        $user = $_SESSION['username'];
+                        // afficher un message
+                        ?>
+                        <li class="nav-item">
+                            <?php
+                                    echo $user;
+                                    ?>
+                        </li>
+
+                        <li class="nav-item">
+                            <form method="post" action="./home.php">
+                                <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnDC" value="Déconnexion">
+                            </form>
+                        </li>
+                    <?php
+                        }
+                    } else {
+                        ?>
                     <li class="nav-item">
                         <a class="nav-link" href="#">S'inscrire</a>
                     </li>
@@ -53,8 +73,10 @@ ob_start();
                             <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnLogin" value="Connexion">
                         </form>
                     </li>
-                </ul>
-            </form>
+                <?php
+                }
+                ?>
+            </ul>
         </div>
     </nav>
 </header>

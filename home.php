@@ -37,18 +37,45 @@ function resultats()
 	require './views/resultats.php';
 }
 
-if(isset($_REQUEST['btnLogin'])){
+function disconnect()
+{
+	// Unset all of the session variables.
+	$_SESSION = array();
+	
+	// If it's desired to kill the session, also delete the session cookie.
+	// Note: This will destroy the session, and not just the session data!
+	if (ini_get("session.use_cookies")) {
+		$params = session_get_cookie_params();
+		setcookie(
+			session_name(),
+			'',
+			time() - 42000,
+			$params["path"],
+			$params["domain"],
+			$params["secure"],
+			$params["httponly"]
+		);
+	}
+	
+	// Finally, destroy the session.
+	session_destroy();
+	main();
+}
+
+if (isset($_REQUEST['btnLogin'])) {
 	loginUser();
-}elseif(isset($_POST['btnFightersList'])){
+} elseif (isset($_POST['btnFightersList'])) {
 	combattants_liste();
-}elseif(isset($_POST['btnFighter'])){
+} elseif (isset($_POST['btnFighter'])) {
 	combattant();
-}elseif(isset($_POST['btnPronos'])){
+} elseif (isset($_POST['btnPronos'])) {
 	pronostics_liste();
-}elseif(isset($_POST['btnResults'])){
+} elseif (isset($_POST['btnResults'])) {
 	resultats();
-}elseif(isset($_POST['btnCompet'])){
+} elseif (isset($_POST['btnCompet'])) {
 	competitions_liste();
+} elseif (isset($_POST['btnDC'])) {
+	disconnect();
 }else{
 	main();
 }
