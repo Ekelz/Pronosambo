@@ -9,6 +9,10 @@ VALUES (
     $matchId,
     10,
     $btnId);
+
+UPDATE utilisateurs
+SET solde = solde - 10
+WHERE id_utilisateur = $userId;
 ";
 
 // Insertion dans la BDD

@@ -18,18 +18,6 @@ ob_start();
     </div>
 </div>
 <div class="container prono-container sambo-container item-body">
-    <!-- <div id="rowrow1" class="row prono-container-row rounded">
-        <div class="col-1">25/09/2019</div>
-        <div class="col container-combat-name">Jean-Michel</div>
-        <div class="col victoire-totale">Victoire Totale</div>
-        <div class="col container-combat-name victoire-totale">Patrick-Hervé</div>
-        <div class="col-3">
-            <button class="btn btn-outline-danger btn-block">
-                <img src="./src/img/sacdor.png" class="gold-logo-resize">
-                Empocher mes gains
-            </button>
-        </div>
-    </div> -->
 
     <?php
     // Requetage
@@ -41,31 +29,61 @@ ob_start();
     $i = 0;
 
     // Affichage du tableau des résultats
-    // Score = -1 : victoire totale.
+    // Score = -1 : victoire totale (KO).
     while ($row = $q->fetch()) :
-        echo '<div id="rowrow', $row['id_match'], '" class="row prono-container-row rounded"><div class="col-1">', $row['date_match'];
-        if ($row['score_c1'] == '-1') {
-            echo '</div><div class="col container-combat-name victoire-totale">', $row['c1surname'], ' ', $row['c1name'];
-            echo '</div><div class="col victoire-totale">Victoire Totale';
-            echo '</div><div class="col container-combat-name">', $row['c2surname'], ' ', $row['c2name'];
-        } elseif ($row['score_c2'] == "-1") {
-            echo '</div><div class="col container-combat-name">', $row['c1surname'], ' ', $row['c1name'];
-            echo '</div><div class="col victoire-totale">Victoire Totale';
-            echo '</div><div class="col container-combat-name victoire-totale">', $row['c2surname'], ' ', $row['c2name'];
-        } elseif ($row['score_c2'] - $row['score_c1'] >= 12) {
-            echo '</div><div class="col container-combat-name">', $row['c1surname'], ' ', $row['c1name'];
-            echo '</div><div class="col victoire-score">', $row['score_c1'], '-', $row['score_c2'];
-            echo '</div><div class="col container-combat-name victoire-totale">', $row['c2surname'], ' ', $row['c2name'];
-        } elseif ($row['score_c1'] - $row['score_c2'] >= 12) {
-            echo '</div><div class="col container-combat-name victoire-totale">', $row['c1surname'], ' ', $row['c1name'];
-            echo '</div><div class="col victoire-score">', $row['score_c1'], '-', $row['score_c2'];
-            echo '</div><div class="col container-combat-name">', $row['c2surname'], ' ', $row['c2name'];
-        } else {
-            echo '</div><div class="col container-combat-name score-nul">', $row['c1surname'], ' ', $row['c1name'];
-            echo '</div><div class="col score-nul">', $row['score_c1'], '-', $row['score_c2'], ' (nul)';
-            echo '</div><div class="col container-combat-name score-nul">', $row['c2surname'], ' ', $row['c2name'];
-        }
-        echo '</div><div class="col-3"><button class="btn btn-sm btn-outline-danger btn-block"><img src="./src/img/sacdor.png" class="gold-logo-resize">Empocher mes gains</button></div></div>';
+        ?>
+        <div id="<?php echo $row['id_match']; ?>" class="row prono-container-row rounded">
+            <div class="col-1"><?php echo $row['date_match'] ?></div>
+            <div class="col container-combat-name <?php
+                                                        if ($row['score_c1'] == "-1") {
+                                                            echo "victoire-totale";
+                                                        } elseif ($row['score_c2'] != "-1" && $row['score_c2'] - $row['score_c1'] <= 12 && $row['score_c1'] - $row['score_c2'] <= 12) {
+                                                            echo  "score-nul";
+                                                        }
+                                                        ?>"><?php echo $row['c1surname'], ' ', $row['c1name']; ?></div>
+            <div class="col <?php
+                                if ($row['score_c1'] == '-1' || $row['score_c2'] == "-1") {
+                                    echo "victoire-totale";
+                                } elseif ($row['score_c2'] - $row['score_c1'] >= 12) {
+                                    echo  "victoire-score";
+                                } elseif ($row['score_c1'] - $row['score_c2'] >= 12) {
+                                    echo "victoire-score";
+                                } else {
+                                    echo "score-nul";
+                                }
+                                ?>">
+                <?php
+                    if ($row['score_c1'] == '-1' || $row['score_c2'] == "-1") {
+                        echo "Victoire par KO";
+                    } elseif ($row['score_c2'] - $row['score_c1'] >= 12) {
+                        echo  $row['score_c1'], '-', $row['score_c2'];
+                    } elseif ($row['score_c1'] - $row['score_c2'] >= 12) {
+                        echo  $row['score_c1'], '-', $row['score_c2'];
+                    } else {
+                        echo  $row['score_c1'], '-', $row['score_c2'];
+                    }
+                    ?>
+            </div>
+            <div class="col container-combat-name <?php
+                                                        if ($row['score_c2'] == "-1") {
+                                                            echo "victoire-totale";
+                                                        } elseif ($row['score_c1'] != "-1" && $row['score_c2'] - $row['score_c1'] <= 12 && $row['score_c1'] - $row['score_c2'] <= 12) {
+                                                            echo  "score-nul";
+                                                        }
+                                                        ?>">
+                <?php echo $row['c2surname'], ' ', $row['c2name']; ?>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-outline-danger btn-block" <?php
+                                                                        // Si l'user a parié et réussi son pari, on affiche le bouton; sinon disabled
+                                                                        require "./model/requetes/get_achieved_pronostics.php";
+                                                                        ?>>
+                    <img src="./src/img/sacdor.png" class="gold-logo-resize">
+                    Empocher mes gains
+                </button>
+            </div>
+        </div>
+    <?php
         $i++;
     endwhile;
     if ($i == 0) {

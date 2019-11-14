@@ -11,7 +11,11 @@ $password = '';
 // Affichage Warnings
 function displayWarning($type, $message)
 {
-    // TODO
+    echo '<div class="row"><div class="col alert alert-'. $type . '">';
+    echo $message;
+    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button></div></div>';
 }
 ?>
 
@@ -23,14 +27,18 @@ function displayWarning($type, $message)
     </div>
 
     <?php
-    // Soumission pronostics : Si l'utilisateur n'a pas les droits ou l'argent pour faire un pari : erreur.
-    //                         Si pari bien posté : message de succès.
-    //                         Si refresh page après le post : igonrer le post.
-    // Test de rafraichissement de la page
+    /* 
+    Soumission pronostics : Si l'utilisateur n'a pas les droits ou l'argent pour faire un pari : erreur.
+                            Si pari bien posté : message de succès.
+                            Si refresh page après le post : igonrer le post.
+    Test de rafraichissement de la page
+    */
     $pageIsRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
     if (isset($_POST['prono-btn-1']) || isset($_POST['prono-btn-2']) || isset($_POST['prono-btn-n'])) {
         if (!$pageIsRefreshed) {
+
             if (isset($_SESSION['username'])) {
+
                 // Récupération du solde de l'user
                 require "./model/requetes/get_user.php";
                 $userInfos = $qUser->fetch();
@@ -48,47 +56,30 @@ function displayWarning($type, $message)
 
                     // Vérification de l'absence de pari similaire
                     require "./model/requetes/get_prono.php";
+
                     if ($qProno->rowCount() == 0 || $qProno == false) {
+                        
                         // Création du pari 
                         require "./model/requetes/insert_prono.php";
+                        
                         if ($qPronoInserted != false) {
                             // Affichage succès dans l'enregistrement du pari
-                            echo '<div class="row"><div class="col alert alert-success">';
-                            echo "Votre pari a été enregistré avec succès !";
-                            echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button></div></div>';
+                            displayWarning("success","Votre pari a été enregistré avec succès !");
                         } else {
                             // Affichage echec dans l'enregistrement du pari
-                            echo '<div class="row"><div class="col alert alert-danger">';
-                            echo "Une erreur a empêché d'enregistrer votre pari. Merci de réessayer ultérieurement.";
-                            echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button></div></div>';
+                            displayWarning("danger","Une erreur a empêché d'enregistrer votre pari. Merci de réessayer ultérieurement.");
                         }
                     } else {
                         // Affichage warning pari deja fait
-                        echo '<div class="row"><div class="col alert alert-warning">';
-                        echo "Vous avez déjà parié sur ce résultat.";
-                        echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button></div></div>';
+                        displayWarning("warning", "Vous avez déjà parié sur ce résultat.");
                     }
                 } else {
                     // Affichage warning pas assez de solde
-                    echo '<div class="row"><div class="col alert alert-warning">';
-                    echo "Vous n'avez pas assez d'argent pour faire ce pari.";
-                    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button></div></div>';
+                    displayWarning("warning", "Vous n'avez pas assez d'argent pour faire ce pari.");
                 }
             } else {
                 // Affichage warning pas connecté
-                echo '<div class="row"><div class="col alert alert-warning">';
-                echo "Vous n'êtes pas authentifié ! Le pari a été ignoré.";
-                echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button></div></div>';
+                displayWarning("warning","Vous n'êtes pas authentifié ! Le pari a été ignoré.");
             }
         }
     }
