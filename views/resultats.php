@@ -1,6 +1,14 @@
 <?php
 $title = "Pronosambo";
 ob_start();
+
+require "./model/requetes/id_base.php";
+require "./views/displayWarning_function.php";
+if (isset($_SESSION['username'])) {
+    // Récupération de l'user
+    require "./model/requetes/get_user.php";
+    $userInfos = $qUser->fetch();
+}
 ?>
 
 <div class="container prono-container sambo-container item-body">
@@ -9,13 +17,62 @@ ob_start();
             DERNIERS RÉSULTATS
         </div>
     </div>
-    <div class="row container-header sambo-background rounded-bottom">
-        <div class="col-1">Date</div>
-        <div class="col">Combattant 1</div>
-        <div class="col">Score</div>
-        <div class="col">Combattant 2</div>
-        <div class="col-3"></div>
-    </div>
+    <?php
+    /*
+    Soumission recup gains : on calcule le gain de l'utilisateur, on l'ajoute à son solde, on delete le prono. 
+    */
+    // Test de rafraichissement de la page
+    $pageIsRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+    if (isset($_POST["btnRecupGain"]) && !$pageIsRefreshed) {
+        // Récupération du pronostic vainqueur
+        $userId = $userInfos['id_utilisateur'];
+        $matchId = $_POST['matchId'];
+        $btnId = $_POST['btnWinnerId'];
+        require "./model/requetes/get_prono_succesful.php";
+        if (!($qPronoSuc == false || $qPronoSuc->rowCount() == 0)) {
+            // Si il est bien récupéré on calcule le gain d'argent
+            $successProno = $qPronoSuc->fetch();
+            switch ($successProno['vote']) {
+                case 0:
+                    $coef = $successProno['coteN'];
+                    break;
+                case 1:
+                    $coef = $successProno['cote1'];
+                    break;
+                case 2:
+                    $coef = $successProno['cote2'];
+                    break;
+            }
+
+            // On met à jour le solde utilisateur en ajoutant le nouveau gain 
+            $gain = $coef * $successProno['mise'];
+            require "./model/requetes/update_solde_user.php";
+            if ($qSoldeUpdated != false) {
+                // On supprime le pari vainqueur pour éviter le doublage des gains
+                $successPronoId = $successProno['pronoId'];
+                require "./model/requetes/delete_prono.php";
+                if ($qPronoDeleted != false) {
+                    // Si tout s'est bien passé, on affiche la bonne nouvelle à l'utilisateur
+                    displayWarning('success', "Bien joué ! Votre compte vient d'être crédité de " . $gain . ' €.');
+                } else {
+                    displayWarning('danger', 'Erreur base de données : Suppression du pari impossible.');
+                }
+            } else {
+                displayWarning('danger', 'Une erreur est survenue. Impossible de récupérer les gains pour le moment.');
+            }
+        } else {
+            displayWarning('danger', 'Une erreur est survenue. Impossible de récupérer les gains pour le moment.');
+        }
+    }
+    ?>
+        <div class="row container-header sambo-background rounded-bottom">
+            <div class="col-1">Date</div>
+            <div class="col">Combattant 1</div>
+            <div class="col">Score</div>
+            <div class="col">Combattant 2</div>
+            <div class="col-3"></div>
+        </div>
 </div>
 <div class="container prono-container sambo-container item-body">
 
@@ -71,13 +128,33 @@ ob_start();
                 <?php echo $row['c2surname'], ' ', $row['c2name']; ?>
             </div>
             <div class="col-3">
-                <button class="btn btn-outline-danger btn-block" <?php
-                                                                        // Si l'user a parié et réussi son pari, on affiche le bouton; sinon disabled
-                                                                        require "./model/requetes/get_achieved_pronostics.php";
-                                                                        ?>>
-                    <img src="./src/img/sacdor.png" class="gold-logo-resize">
-                    Empocher mes gains
-                </button>
+                <form method="post" action="./home.php">
+                    <input type="hidden" name="matchId" value="<?php echo $row["id_match"]; ?>">
+                    <button type="submit" class="btn btn-outline-danger btn-block" <?php
+                                                                                        // Si l'user a parié et réussi son pari, on affiche le bouton; sinon disabled
+                                                                                        if ($row['score_c1'] == '-1' || $row['score_c1'] - $row['score_c2'] >= 12) {
+                                                                                            $btnId = 1;
+                                                                                        } elseif ($row['score_c2'] == "-1" || $row['score_c2'] - $row['score_c1'] >= 12) {
+                                                                                            $btnId = 2;
+                                                                                        } else {
+                                                                                            $btnId = 0;
+                                                                                        }
+                                                                                        if (isset($userInfos)) {
+                                                                                            $userId = $userInfos['id_utilisateur'];
+                                                                                            $matchId = $row['id_match'];
+                                                                                            require "./model/requetes/get_prono.php";
+                                                                                            if ($qProno == false || $qProno->rowCount() == 0) {
+                                                                                                echo "disabled='disabled'";
+                                                                                            }
+                                                                                        } else {
+                                                                                            echo "disabled='disabled'";
+                                                                                        }
+                                                                                        ?> name="btnRecupGain">
+                        <img src="./src/img/sacdor.png" class="gold-logo-resize">
+                        Empocher mes gains
+                    </button>
+                    <input type="hidden" name="btnWinnerId" value="<?php echo $btnId; ?>">
+                </form>
             </div>
         </div>
     <?php

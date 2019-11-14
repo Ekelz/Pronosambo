@@ -3,16 +3,7 @@ $title = "Pronosambo";
 ob_start();
 
 require "./model/requetes/id_base.php";
-
-// Affichage Warnings
-function displayWarning($type, $message)
-{
-    echo '<div class="row"><div class="col alert alert-'. $type . '">';
-    echo $message;
-    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button></div></div>';
-}
+require "./views/displayWarning_function.php";
 ?>
 
 <div class="container prono-container sambo-container item-body">
@@ -27,8 +18,8 @@ function displayWarning($type, $message)
     Soumission pronostics : Si l'utilisateur n'a pas les droits ou l'argent pour faire un pari : erreur.
                             Si pari bien posté : message de succès.
                             Si refresh page après le post : igonrer le post.
-    Test de rafraichissement de la page
     */
+    // Test de rafraichissement de la page
     $pageIsRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
     if (isset($_POST['prono-btn-1']) || isset($_POST['prono-btn-2']) || isset($_POST['prono-btn-n'])) {
         if (!$pageIsRefreshed) {
@@ -57,7 +48,7 @@ function displayWarning($type, $message)
                         
                         // Création du pari 
                         require "./model/requetes/insert_prono.php";
-                        
+
                         if ($qPronoInserted != false) {
                             // Affichage succès dans l'enregistrement du pari
                             displayWarning("success","Votre pari a été enregistré avec succès !");
