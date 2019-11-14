@@ -20,10 +20,7 @@ ob_start();
 <div class="container prono-container item-body">
     <?php
     // Requetage 
-    $host = 'localhost';
-    $dbname = 'pronosambo';
-    $username = 'root';
-    $password = '';
+    require "./model/requetes/id_base.php";
     require "./model/requetes/get_pronostics.php";
 
     // Affichage du tableau de résultats

@@ -7,17 +7,14 @@ ob_start();
         <div class="row">
             <div class="card combattant-home-card">
                 <div class="card-header sambo-background">
-                    BONJOUR JE SUIS UNE CARTE
-                    LOL
+                    COMBATTANT DU MOIS
                 </div>
                 <div class="card-body">
                     <p>
-                        Et moi je suis le body de la carte. Je contiens de nombreux éléments afin de renforcer votre impression de contenir quelque chose d'intéressant, ce qu n'est bien sûr pas le cas.
+                        FEDOR EMELIANENKO
                     </p>
-                    <form>
-                        <button class="btn btn-light my-2 my-sm-0 sambo-background" type="submit">Accéder à quelque chose</button>
-                        <button class="btn btn-light my-2 my-sm-0 sambo-background" type="submit">BOUTON</button>
-                        <button class="btn btn-light my-2 my-sm-0 sambo-background" type="submit">TONBOU</button>
+                    <form method="post" action="./home.php">
+                        <button class="btn btn-light my-2 my-sm-0 sambo-background" type="submit" name="btnFighter" value="Fedor Emelianenko">Accéder à son profil</button>
                     </form>
                 </div>
             </div>
