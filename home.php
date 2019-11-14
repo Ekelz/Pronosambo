@@ -68,7 +68,7 @@ if (isset($_REQUEST['btnLogin'])) {
 	combattants_liste();
 } elseif (isset($_POST['btnFighter'])) {
 	combattant();
-} elseif (isset($_POST['btnPronos'])) {
+} elseif (isset($_POST['btnPronos']) || isset($_POST['prono-btn-1']) || isset($_POST['prono-btn-2']) || isset($_POST['prono-btn-n'])) {
 	pronostics_liste();
 } elseif (isset($_POST['btnResults'])) {
 	resultats();
