@@ -2,11 +2,7 @@
 $title = "Pronosambo";
 ob_start();
 
-// Ids de connexion à la base
-$host = 'localhost';
-$dbname = 'pronosambo';
-$username = 'root';
-$password = '';
+require "./model/requetes/id_base.php";
 
 // Affichage Warnings
 function displayWarning($type, $message)

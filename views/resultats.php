@@ -21,10 +21,7 @@ ob_start();
 
     <?php
     // Requetage
-    $host = 'localhost';
-    $dbname = 'pronosambo';
-    $username = 'root';
-    $password = '';
+    require "./model/requetes/id_base.php";
     require "./model/requetes/get_finished_games.php";
     $i = 0;
 
