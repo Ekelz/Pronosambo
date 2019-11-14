@@ -67,7 +67,9 @@ ob_start();
                     } else {
                         ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">S'inscrire</a>
+                        <form method="post" action="./home.php">
+                            <input class="mr-sm-2 sambo-background no-borders" type="submit" name="btnSub" value="S'inscrire">
+                        </form>
                     </li>
                     <li class="nav-item">
                         <form method="post" action="./home.php">

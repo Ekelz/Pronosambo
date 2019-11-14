@@ -12,6 +12,11 @@ function loginUser()
 	require './views/login.php';
 }
 
+function signup()
+{
+	require './views/signup.php';
+}
+
 function competitions_liste()
 {
 	require './views/competitions_liste.php';
@@ -68,7 +73,7 @@ if (isset($_REQUEST['btnLogin'])) {
 	combattants_liste();
 } elseif (isset($_POST['btnFighter'])) {
 	combattant();
-} elseif (isset($_POST['btnPronos'])) {
+} elseif (isset($_POST['btnPronos']) || isset($_POST['prono-btn-1']) || isset($_POST['prono-btn-2']) || isset($_POST['prono-btn-n'])) {
 	pronostics_liste();
 } elseif (isset($_POST['btnResults'])) {
 	resultats();
@@ -76,6 +81,8 @@ if (isset($_REQUEST['btnLogin'])) {
 	competitions_liste();
 } elseif (isset($_POST['btnDC'])) {
 	disconnect();
+} elseif (isset($_POST['btnSub'])) {
+	signup();
 }else{
 	main();
 }
