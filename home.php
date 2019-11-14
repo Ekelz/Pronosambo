@@ -12,6 +12,11 @@ function loginUser()
 	require './views/login.php';
 }
 
+function signup()
+{
+	require './views/signup.php';
+}
+
 function competitions_liste()
 {
 	require './views/competitions_liste.php';
@@ -76,6 +81,8 @@ if (isset($_REQUEST['btnLogin'])) {
 	competitions_liste();
 } elseif (isset($_POST['btnDC'])) {
 	disconnect();
+} elseif (isset($_POST['btnSub'])) {
+	signup();
 }else{
 	main();
 }

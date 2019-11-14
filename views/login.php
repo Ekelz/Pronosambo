@@ -2,6 +2,7 @@
 $title = "Pronosambo";
 ob_start();
 ?>
+<hr>
 <section class="section">
     <div class="container item-body">
         <div class="row">
@@ -18,11 +19,17 @@ ob_start();
 
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" required>
-                            <button type="submit" class="button is-primary">Log in</button>
+                            <button type="submit" class="btn btn-outline-light my-2 my-sm-0" name="btnLog">Log in</button>
                         </div>
                     </form>
+                    <hr><hr>
                     <div class="container signin">
-                        <p>Already have an account? <a href="#">Sign in</a>.</p>
+                        <p>
+                        <form method="post" action="./home.php">
+                            Don't have an account? <input class="btn btn-outline-light my-2 my-sm-0" type="submit" name="btnSub" value="Sign up">
+                        </form>
+                        </p>
+
                     </div>
                 </div>
             </div>
