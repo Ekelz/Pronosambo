@@ -14,9 +14,9 @@ h1.titre_combattant{
 
 .img_combattant{
 	display: block;
-    margin-top: 5%;
     margin-right: 2%;
     margin-left: 2%;
+    margin-bottom: 1%;
     width: 25%;
     float: left;
 	border-radius: 10px;
@@ -35,13 +35,12 @@ h1.titre_combattant{
 }
 
 .block_joueur{
-    margin-top: 5%;
-    margin-right: 2%;
-	margin-left: 2%;
-	margin-bottom: 2%;
-	display: inline-block;
-	width: 50%;
 	background-color: white;
+	display: block;
+    margin-right: 2%;
+    margin-left: 2%;
+    float: left;
+	width: 25%;
 }
 
 .champ_joueur{
@@ -52,7 +51,8 @@ h1.titre_combattant{
 
 .container-fighter{
 	text-align: center;
-	width: 50%;
-    margin-left: 2%;
+	width: 70%;
+    margin-left: 0%;
 	margin-right: 2%;
+    float: right;
 }
