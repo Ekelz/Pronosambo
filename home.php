@@ -75,7 +75,7 @@ if (isset($_REQUEST['btnLogin'])) {
 	combattant();
 } elseif (isset($_POST['btnPronos']) || isset($_POST['prono-btn-1']) || isset($_POST['prono-btn-2']) || isset($_POST['prono-btn-n'])) {
 	pronostics_liste();
-} elseif (isset($_POST['btnResults'])) {
+} elseif (isset($_POST['btnResults']) || isset($_POST['btnRecupGain'])) {
 	resultats();
 } elseif (isset($_POST['btnCompet'])) {
 	competitions_liste();
