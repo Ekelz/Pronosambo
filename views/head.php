@@ -38,9 +38,9 @@ ob_start();
                     </form>
                 <li class="nav-item">
                 <li class="nav-item padding-left">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2 sambo-navbar-input sambo-background" type="search" placeholder="Rechercher un combattant..." aria-label="Search">
-                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Recherche</button>
+                    <form class="form-inline my-2 my-lg-0" method="post" action="./home.php">
+                        <input class="form-control mr-sm-2 sambo-navbar-input sambo-background" name="SearchResult" type="search" placeholder="Rechercher un combattant..." aria-label="Search">
+                        <input class="btn btn-outline-light my-2 my-sm-0" type="submit" name="btnSearch" value="Recherche"/>
                     </form>
                 </li>
             </ul>
