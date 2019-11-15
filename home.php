@@ -69,7 +69,7 @@ function disconnect()
 
 if (isset($_REQUEST['btnLogin'])) {
 	loginUser();
-} elseif (isset($_POST['btnFightersList'])) {
+} elseif (isset($_POST['btnFightersList']) || isset($_POST['btnSearch'])) {
 	combattants_liste();
 } elseif (isset($_POST['btnFighter'])) {
 	combattant();

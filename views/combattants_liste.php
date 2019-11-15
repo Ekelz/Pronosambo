@@ -5,8 +5,13 @@ ob_start();
 	<div class="container item-body sambo-container">
 		<?php
             // Requetage 
-            require "./model/requetes/id_base.php";
-            require "./model/requetes/get_combattants_liste.php";
+			require "./model/requetes/id_base.php";
+			if(isset($_POST['btnSearch'])){
+				$combattant = $_POST["SearchResult"];
+				require "./model/requetes/get_fighters_by_search.php";
+			} else {
+				require "./model/requetes/get_combattants_liste.php";
+			}
     	?>
 
 		<div class="row prono-container container-title">
@@ -16,7 +21,9 @@ ob_start();
 		</div>
 		
 		<?php
-        while ($value = $q->fetch()) :
+		if($q != null){
+			while ($value = $q->fetch()) :	
+        	
     	?>
 		<form method="post" action="./home.php">
 			<div class="card border-0 info_combattants_liste sambo-background" style="width: 18rem;">
@@ -29,7 +36,8 @@ ob_start();
 			</div>
 		</form>
 		<?php
-			endwhile
+			endwhile;
+		}
 		?>
 	</div>	
 
