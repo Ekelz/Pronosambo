@@ -1,0 +1,126 @@
+body {
+    background-color: rgb(180, 0, 0);
+    background-image: url("../img/Sambpo_fond_ecran.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: 100%;
+}
+
+.sambo-background {
+    background-color: rgb(31, 31, 95);
+    color: white;
+}
+
+.padding-left {
+    padding-left: 15px;
+}
+
+.sambo-navbar-input {
+    border: 1px solid grey;
+    color: white;
+}
+
+.container-header {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container-title {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.container-combat-name {
+    color: rgb(31, 31, 95);
+    vertical-align: middle;
+}
+
+.prono-container-row {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 3px;
+}
+
+.blank-space {
+    padding-top: 20px
+}
+
+.prono-container {
+    text-align: center;
+}
+
+.sambo-container {
+    margin-block: 20px;
+}
+
+.no-borders:hover,
+.no-borders:focus {
+    text-decoration: none;
+}
+
+.no-borders.disabled {
+    color: #919ca7;
+    pointer-events: none;
+    cursor: default;
+}
+
+.no-borders {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    height: calc(1.5em + 0.75rem + 2px);
+}
+
+.no-borders:hover .no-borders:focus {
+    color: #dee2e6;
+}
+
+.no-borders.disabled {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.no-borders.active {
+    color: #495057;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.combattant-home-card {
+    width: 30%;
+    margin: 1%;
+    margin-top: 20px;
+}
+
+.victoire-totale {
+    color: rgb(0, 167, 0);
+}
+
+.container-combat-name.victoire-totale {
+    font-weight: bold;
+}
+
+.victoire-score {
+    color: rgb(31, 31, 95);
+}
+
+.score-nul {
+    color: grey;
+}
+
+.head-logo-resize {
+    width: 50px;
+}
+
+.gold-logo-resize {
+    width: 30px;
+    padding-right: 7px;
+}
+
+.item-body {
+    opacity: 0.93;
+}
