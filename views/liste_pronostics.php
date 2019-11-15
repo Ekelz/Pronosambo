@@ -44,7 +44,7 @@ require "./views/displayWarning_function.php";
                     // Vérification de l'absence de pari similaire
                     require "./model/requetes/get_prono.php";
 
-                    if ($qProno->rowCount() == 0 || $qProno == false) {
+                    if ($qProno == false || $qProno->rowCount() == 0) {
                         
                         // Création du pari 
                         require "./model/requetes/insert_prono.php";
