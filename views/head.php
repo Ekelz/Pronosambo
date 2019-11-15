@@ -58,7 +58,10 @@ ob_start();
                             <?php
                                     echo "
                                     <form method=\"post\">
-                                        <input class=\"mr-sm-2 sambo-background no-borders\" type=\"submit\" value=\"$user  $gain €\">
+                                        <button class=\"mr-sm-2 sambo-background no-borders\" type=\"submit\" >$user&nbsp;&nbsp;&nbsp;
+                                        $gain €
+                                        <img src=\"./src/img/sacdor.png\" class=\"gold-logo-resize\">
+                                        </button>
                                     </form>";
                                     ?>
                         </li>

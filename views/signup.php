@@ -15,13 +15,13 @@ ob_start();
                             <hr>
 
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="username" required>
-                            <hr>
+                            <input class="form-control" type="text" placeholder="Enter Email" name="username" required>
+                            <br>
                             <label for="psw"><b>Password</b></label>
-                            <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
-                            <hr>
+                            <input class="form-control" id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+                            <br>
                             <label for="psw"><b>Confirm password</b></label>
-                            <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+                            <input class="form-control" id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
                             <hr>
                             <input type="submit" class="btn btn-outline-light my-2 my-sm-0" name="btnSgn" value="Sign up">
                         </div>
