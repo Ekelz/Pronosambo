@@ -35,7 +35,14 @@ if (isset($_POST['btnLog'])) {
             $count = $reponse['count(*)'];
             if ($count != 0) // nom d'utilisateur et mot de passe correctes
             {
+                $requete = "SELECT DISTINCT solde FROM utilisateurs where 
+                login = '" . $username . "' and password = '" . $password . "' ";
+                $exec_requete = mysqli_query($db, $requete);
+                $reponse      = mysqli_fetch_array($exec_requete);
+
                 $_SESSION['username'] = $username;
+                $_SESSION['gain'] = $reponse[0];
+
                 header('Location: ../../home.php');
             } else {
                 header('Location: ../../home.php?erreur=1'); // utilisateur ou mot de passe incorrect

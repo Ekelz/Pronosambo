@@ -46,14 +46,20 @@ ob_start();
             </ul>
             <ul class="navbar-nav mr-auto">
                 <?php
-                if (isset($_SESSION['username'])) {
+                if ((isset($_SESSION['username']) && (isset($_SESSION['gain'])))) {
                     if ($_SESSION['username'] !== "") {
                         $user = $_SESSION['username'];
+                        $gain = $_SESSION['gain'];
                         // afficher un message
                         ?>
                         <li class="nav-item">
+                    </li>
+                        <li class="nav-item">
                             <?php
-                                    echo $user;
+                                    echo "
+                                    <form method=\"post\">
+                                        <input class=\"mr-sm-2 sambo-background no-borders\" type=\"submit\" value=\"$user  $gain €\">
+                                    </form>";
                                     ?>
                         </li>
 
