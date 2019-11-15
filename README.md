@@ -1,15 +1,12 @@
-# Pronosambo
+﻿# Pronosambo
+
 Projet de développement d'un site web complet de pronostic sur des rencontres de sambo.
 Créé par FAURIE Gabrielle, DUMONTET Etienne et ROS Quentin.
 
 
-Les sources utilisées pour le front-end sont : 
-
-	- Bulma v0.7.5 pour la mise en forme css (Non utilisé pour le moment - Documentation : https://bulma.io/documentation/)
-	- Font Awesome Free 5.10.2 principalement pour les icônes (Documentation : https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)
-	# - Bootstrap v4.3.1 (Documentation : https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+La source utilisée pour le front-end est : Bootstrap v4.3.1 (Documentation : https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 	
-	
-Le back-end sera effectué en C++ sauf changement.
+Le back-end a été effectué en Php, et la base est une base MySQL gérée avec PhpMyAdmin.
+Les requêtes à la base de données se font avec PDO.
 
-TODO BDD à utiliser.
+Note : Pour lancer l'application Web, il faut exécuter le fichier home.php

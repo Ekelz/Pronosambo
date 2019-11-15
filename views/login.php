@@ -15,19 +15,21 @@ ob_start();
                             <hr>
 
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="username" required>
-
+                            <input class="form-control" type="text" placeholder="Enter Email" name="username" required>
+                            <br>
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" required>
+                            <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
+                            <hr>
                             <button type="submit" class="btn btn-outline-light my-2 my-sm-0" name="btnLog">Log in</button>
                         </div>
                     </form>
-                    <hr><hr>
+                    <hr>
+                    <hr>
                     <div class="container signin">
                         <p>
-                        <form method="post" action="./home.php">
-                            Don't have an account? <input class="btn btn-outline-light my-2 my-sm-0" type="submit" name="btnSub" value="Sign up">
-                        </form>
+                            <form method="post" action="./home.php">
+                                Don't have an account? <input class="btn btn-outline-light my-2 my-sm-0" type="submit" name="btnSub" value="Sign up">
+                            </form>
                         </p>
 
                     </div>
